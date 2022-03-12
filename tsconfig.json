@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "useDefineForClassFields": true,
+    "jsx": "preserve" /*不要用ts编译jsx，因为vue3支持jsx，如果用ts去编译，会按照react风格，不适用于vue3*/,
+    "sourceMap": true,
+    "esModuleInterop": true /*支持es、commonjs相互转换*/,
+    "lib": ["esnext", "dom", "es2018.Promise"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["node_modules"]
+}
