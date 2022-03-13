@@ -30,7 +30,8 @@ module.exports = {
         trailingComma: "none", // 对象最后一个属性后面是否要逗号
         endOfLine: "auto" // 行尾的换行符
       }
-    ]
+    ],
+    "vue/multi-word-component-names": 0 // 允许index.vue等单个单词组件定义
   },
   globals: {
     defineProps: "readonly"
