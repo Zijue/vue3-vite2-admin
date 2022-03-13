@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useMainStore } from "@/store"
 import { ElMessage } from "element-plus"
-import SvgIcon from "@/components/SvgIcon.vue"
+// import SvgIcon from "@/components/SvgIcon.vue"
 import { getCurrentInstance } from "vue"
 
 const mainStore = useMainStore()
@@ -41,13 +41,13 @@ const sayHi = () => {
     <button @click="mainStore.addAmount(3)">mainStore.addAmount(3)</button>
     <el-button type="primary" @click="clickModal">点击弹框</el-button>
     <div>
-      <SvgIcon
+      <svg-icon
         color="green"
         class-name="custom-class"
-        name="bug"
+        icon-name="bug"
         @click="sayHi"
       />
-      <SvgIcon name="chart" />
+      <svg-icon icon-name="chart" />
     </div>
   </div>
 </template>

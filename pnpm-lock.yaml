@@ -4,6 +4,7 @@ specifiers:
   '@commitlint/cli': ^16.2.1
   '@commitlint/config-conventional': ^16.2.1
   '@types/lodash-es': '*'
+  '@types/path-browserify': ^1.0.0
   '@typescript-eslint/eslint-plugin': ^5.14.0
   '@typescript-eslint/parser': ^5.14.0
   '@vitejs/plugin-vue': ^2.2.4
@@ -21,6 +22,7 @@ specifiers:
   lint-staged: ^12.3.5
   mrm: ^3.0.10
   normalize.css: ^8.0.1
+  path-browserify: ^1.0.1
   pinia: ^2.0.11
   postcss: ^8.1.0
   prettier: ^2.5.1
@@ -36,10 +38,12 @@ specifiers:
 
 dependencies:
   '@types/lodash-es': 4.17.6
+  '@types/path-browserify': 1.0.0
   '@vue/runtime-core': 3.2.31
   dayjs: 1.10.8
   element-plus: 2.1.0_1a412d14def5ff5ca1122000e4bee666
   normalize.css: 8.0.1
+  path-browserify: 1.0.1
   pinia: 2.0.11_typescript@4.6.2+vue@3.2.31
   vue: 3.2.31
   vue-router: 4.0.14_vue@3.2.31
@@ -437,6 +441,10 @@ packages:
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
     dev: true
+
+  /@types/path-browserify/1.0.0:
+    resolution: {integrity: sha512-XMCcyhSvxcch8b7rZAtFAaierBYdeHXVvg2iYnxOV0MCQHmPuRRmGZPFDRzPayxcGiiSL1Te9UIO+f3cuj0tfw==}
+    dev: false
 
   /@types/svgo/2.6.2:
     resolution: {integrity: sha512-m1SqMc/EDAZ8v0BBX+NmlYytUXtvrMD2/J9LICwnMvAuJwb0GSmACU3XPvcORqE7ghEJA4Mk6NYzpwhQI/biPw==}
@@ -4133,6 +4141,10 @@ packages:
     resolution: {integrity: sha1-s2PlXoAGym/iF4TS2yK9FdeRfxQ=}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /path-browserify/1.0.1:
+    resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
+    dev: false
 
   /path-exists/3.0.0:
     resolution: {integrity: sha1-zg6+ql94yxiSXqfYENe1mwEP1RU=}

@@ -1,5 +1,5 @@
 <template>
-  <svg :class="svgClass" aria-hidden="true">
+  <svg :class="svgClass" aria-hidden="true" v-bind="$attrs">
     <use :href="symbolId" :fill="color" />
   </svg>
 </template>
@@ -14,7 +14,7 @@ export default defineComponent({
       type: String,
       default: "icon"
     },
-    name: {
+    iconName: {
       type: String,
       required: true
     },
@@ -28,7 +28,7 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const symbolId = computed(() => `#${props.prefix}-${props.name}`)
+    const symbolId = computed(() => `#${props.prefix}-${props.iconName}`)
     // 添加类名 props.className外部传入自定义类名
     const svgClass = computed(() =>
       props.className ? `svg-icon ${props.className}` : "svg-icon"

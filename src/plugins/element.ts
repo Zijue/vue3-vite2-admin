@@ -1,6 +1,14 @@
 import { App } from "vue"
 import ElementPlus from "element-plus"
-import { ElButton, ElMessage, ElNotification, ElMessageBox } from "element-plus"
+import {
+  ElButton,
+  ElMessage,
+  ElNotification,
+  ElMessageBox,
+  ElMenu,
+  ElMenuItem,
+  ElSubMenu
+} from "element-plus"
 import "element-plus/dist/index.css"
 // Element Plus 组件内部默认使用英语
 // https://element-plus.gitee.io/zh-CN/guide/i18n.html
@@ -14,9 +22,17 @@ export type Size = "default" | "medium" | "small" | "mini"
 // 貌似当前版本已经全局挂载了element-plus api ???
 export default (app: App): void => {
   app.use(ElementPlus, { locale: zhCn })
-  // 按需导入组件列表
 
-  const components = [ElButton, ElMessage, ElNotification, ElMessageBox]
+  // 按需导入组件列表
+  const components = [
+    ElButton,
+    ElMessage,
+    ElNotification,
+    ElMessageBox,
+    ElMenu,
+    ElMenuItem,
+    ElSubMenu
+  ]
   components.forEach((component) => {
     app.use(component)
   })
