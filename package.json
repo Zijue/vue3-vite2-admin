@@ -41,6 +41,8 @@
   },
   "dependencies": {
     "@types/lodash-es": "*",
+    "@vue/runtime-core": "^3.2.31",
+    "dayjs": "^1.10.8",
     "element-plus": "^2.1.0",
     "normalize.css": "^8.0.1",
     "pinia": "^2.0.11",

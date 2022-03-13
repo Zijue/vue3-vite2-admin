@@ -6,12 +6,12 @@ import "normalize.css/normalize.css"
 // 全局css
 import "@/styles/index.scss"
 import { createPinia } from "pinia"
-import ElementPlus from "element-plus"
-import "element-plus/dist/index.css"
 import "virtual:svg-icons-register"
+// element-plus
+import installElementPlus from "@/plugins/element"
 
 const app = createApp(App)
 app.use(createPinia())
 app.use(router)
-app.use(ElementPlus)
+app.use(installElementPlus)
 app.mount("#app")

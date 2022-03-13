@@ -9,7 +9,9 @@ specifiers:
   '@vitejs/plugin-vue': ^2.2.4
   '@vue/eslint-config-prettier': ^7.0.0
   '@vue/eslint-config-typescript': ^10.0.0
+  '@vue/runtime-core': ^3.2.31
   autoprefixer: ^10.4.2
+  dayjs: ^1.10.8
   element-plus: ^2.1.0
   eslint: ^8.11.0
   eslint-plugin-prettier: ^4.0.0
@@ -34,6 +36,8 @@ specifiers:
 
 dependencies:
   '@types/lodash-es': 4.17.6
+  '@vue/runtime-core': 3.2.31
+  dayjs: 1.10.8
   element-plus: 2.1.0_1a412d14def5ff5ca1122000e4bee666
   normalize.css: 8.0.1
   pinia: 2.0.11_typescript@4.6.2+vue@3.2.31

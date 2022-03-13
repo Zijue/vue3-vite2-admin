@@ -28,6 +28,7 @@ const clickModal = () => {
 const { proxy } = getCurrentInstance()!
 const sayHi = () => {
   proxy?.$message.success("恭喜你，这是一条成功信息")
+  // proxy?.$ELEMENT // 这个能够自动提示，说明全局挂载成功
 }
 </script>
 <template>
