@@ -8,5 +8,15 @@ export default defineConfig({
     alias: {
       "@": resolve(__dirname, "./src")
     }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/styles/theme.scss";'
+      },
+      less: {
+        additionalData: '@import "@/styles/theme.less";'
+      }
+    }
   }
 })
