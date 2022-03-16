@@ -15,7 +15,9 @@
         <el-menu-item :index="resolvePath(theOnlyOneChildRoute.path)">
           <svg-icon v-if="icon" :icon-name="icon" class-name="menu-icon" />
           <template #title>
-            <span>{{ theOnlyOneChildRoute.meta.title }}</span>
+            <span class="submenu-title">{{
+              theOnlyOneChildRoute.meta.title
+            }}</span>
           </template>
         </el-menu-item>
       </sidebar-item-link>
