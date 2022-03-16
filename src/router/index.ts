@@ -17,7 +17,8 @@ export const asyncRoutes: RouteRecordRaw[] = [
           ),
         meta: {
           title: "Documentation",
-          icon: "documentation"
+          icon: "documentation",
+          hidden: true // 菜单栏不显示
         }
       }
     ]
@@ -54,7 +55,8 @@ export const asyncRoutes: RouteRecordRaw[] = [
           import(/* webpackChunkName: "menu" */ "@/views/system/menu.vue"),
         meta: {
           title: "Menu Management",
-          icon: "list"
+          icon: "list",
+          hidden: true
         }
       },
       {

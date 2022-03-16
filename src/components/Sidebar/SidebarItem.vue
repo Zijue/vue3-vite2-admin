@@ -1,7 +1,13 @@
 <template>
-  <div class="sidebar-item-container">
+  <div v-if="!item.meta || !item.meta.hidden" class="sidebar-item-container">
     <!--一个路由下只有一个子路由的时候 只渲染这个子路由-->
-    <template v-if="theOnlyOneChildRoute && !theOnlyOneChildRoute.children">
+    <template
+      v-if="
+        theOnlyOneChildRoute &&
+        (!theOnlyOneChildRoute.children ||
+          (theOnlyOneChildRoute as {noShowingChildren: boolean}).noShowingChildren)
+      "
+    >
       <sidebar-item-link
         v-if="theOnlyOneChildRoute.meta"
         :to="resolvePath(theOnlyOneChildRoute.path)"
@@ -97,7 +103,8 @@ export default defineComponent({
       // 无可渲染chiildren时 把当前路由item作为仅有的子路由渲染
       return {
         ...props.item,
-        path: "" // resolvePath避免resolve拼接时 拼接重复
+        path: "", // resolvePath避免resolve拼接时 拼接重复
+        noShowingChildren: true // 没有可渲染chiildren
       }
     })
 
