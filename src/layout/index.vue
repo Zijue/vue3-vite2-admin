@@ -8,15 +8,13 @@
         <div class="navbar">navbar</div>
         <div class="tags-view">tagsview</div>
       </div>
-      <div class="app-main">
-        <h2>app main</h2>
-        <router-view></router-view>
-      </div>
+      <app-main />
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import Sidebar from "@/components/Sidebar/index.vue"
+import AppMain from "@/components/AppMain/index.vue"
 </script>
 <style lang="scss" scoped>
 .app-wrapper {
