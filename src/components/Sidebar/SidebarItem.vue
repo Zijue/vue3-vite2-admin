@@ -4,8 +4,7 @@
     <template
       v-if="
         theOnlyOneChildRoute &&
-        (!theOnlyOneChildRoute.children ||
-          (theOnlyOneChildRoute as {noShowingChildren: boolean}).noShowingChildren)
+        (!theOnlyOneChildRoute.children || noShowingChildren)
       "
     >
       <sidebar-item-link
@@ -41,19 +40,21 @@
         </el-icon>
         <svg-icon
           v-else-if="item.meta?.icon"
-          :icon-name="(item.meta as {icon: string}).icon"
+          :icon-name="item.meta.icon"
           class-name="menu-icon"
         />
         <span class="submenu-title">{{ item.meta?.title }}</span>
       </template>
-      <sidebar-item
-        v-for="child in item.children"
-        :key="child.path"
-        :is-nest="true"
-        :item="child"
-        :base-path="resolvePath(child.path)"
-      >
-      </sidebar-item>
+      <template v-if="item.children">
+        <sidebar-item
+          v-for="child in item.children"
+          :key="child.path"
+          :is-nest="true"
+          :item="child"
+          :base-path="resolvePath(child.path)"
+        >
+        </sidebar-item>
+      </template>
     </el-sub-menu>
   </div>
 </template>
@@ -119,10 +120,12 @@ export default defineComponent({
       // 无可渲染chiildren时 把当前路由item作为仅有的子路由渲染
       return {
         ...props.item,
-        path: "", // resolvePath避免resolve拼接时 拼接重复
-        noShowingChildren: true // 没有可渲染chiildren
+        path: "" // resolvePath避免resolve拼接时 拼接重复
       }
     })
+
+    // 是否有可渲染子路由
+    const noShowingChildren = computed(() => showingChildNumber.value === 0)
 
     // menu icon
     const icon = computed(() => {
@@ -144,7 +147,8 @@ export default defineComponent({
     return {
       theOnlyOneChildRoute,
       icon,
-      resolvePath
+      resolvePath,
+      noShowingChildren
     }
   }
 })
