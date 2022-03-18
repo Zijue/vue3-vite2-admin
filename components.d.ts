@@ -2,18 +2,19 @@
 // We suggest you to commit this file into source control
 // Read more: https://github.com/vuejs/vue-next/pull/3399
 
-declare module "vue" {
+declare module 'vue' {
   export interface GlobalComponents {
-    AppMain: typeof import("./src/components/AppMain/index.vue")["default"]
-    ElButton: typeof import("element-plus/es")["ElButton"]
-    ElMenu: typeof import("element-plus/es")["ElMenu"]
-    ElMenuItem: typeof import("element-plus/es")["ElMenuItem"]
-    ElSubMenu: typeof import("element-plus/es")["ElSubMenu"]
-    Sidebar: typeof import("./src/components/Sidebar/index.vue")["default"]
-    SidebarItem: typeof import("./src/components/Sidebar/SidebarItem.vue")["default"]
-    SidebarItemLink: typeof import("./src/components/Sidebar/SidebarItemLink.vue")["default"]
-    SvgIcon: typeof import("./src/components/SvgIcon.vue")["default"]
+    AppMain: typeof import('./src/components/AppMain/index.vue')['default']
+    ElButton: typeof import('element-plus/es')['ElButton']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElMenu: typeof import('element-plus/es')['ElMenu']
+    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    Sidebar: typeof import('./src/components/Sidebar/index.vue')['default']
+    SidebarItem: typeof import('./src/components/Sidebar/SidebarItem.vue')['default']
+    SidebarItemLink: typeof import('./src/components/Sidebar/SidebarItemLink.vue')['default']
+    SvgIcon: typeof import('./src/components/SvgIcon.vue')['default']
   }
 }
 
-export {}
+export { }

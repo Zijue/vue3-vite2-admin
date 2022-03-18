@@ -13,7 +13,14 @@
         :to="resolvePath(theOnlyOneChildRoute.path)"
       >
         <el-menu-item :index="resolvePath(theOnlyOneChildRoute.path)">
-          <svg-icon v-if="icon" :icon-name="icon" class-name="menu-icon" />
+          <el-icon
+            v-if="icon && icon.includes('el-icon')"
+            color="#333"
+            class="no-inherit"
+          >
+            <component :is="icon.slice(8)" />
+          </el-icon>
+          <svg-icon v-else-if="icon" :icon-name="icon" class-name="menu-icon" />
           <template #title>
             <span class="submenu-title">{{
               theOnlyOneChildRoute.meta.title
@@ -25,8 +32,15 @@
     <!-- 多个子路由时 -->
     <el-sub-menu v-else :index="resolvePath(item.path)" popper-append-to-body>
       <template #title>
+        <el-icon
+          v-if="icon && icon.includes('el-icon')"
+          color="#333"
+          class="no-inherit"
+        >
+          <component :is="icon.slice(8)" />
+        </el-icon>
         <svg-icon
-          v-if="item.meta?.icon"
+          v-else-if="item.meta?.icon"
           :icon-name="(item.meta as {icon: string}).icon"
           class-name="menu-icon"
         />
