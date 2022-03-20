@@ -46,7 +46,8 @@ export const asyncRoutes: RouteRecordRaw[] = [
     redirect: "/system/user",
     meta: {
       title: "System",
-      icon: "lock"
+      icon: "lock",
+      alwaysShow: true // 根路由始终显示，哪怕只有一个子路由
     },
     children: [
       {
@@ -65,7 +66,8 @@ export const asyncRoutes: RouteRecordRaw[] = [
           import(/* webpackChunkName: "role" */ "@/views/system/role.vue"),
         meta: {
           title: "Role Management",
-          icon: "list"
+          icon: "list",
+          hidden: true
         }
       },
       {

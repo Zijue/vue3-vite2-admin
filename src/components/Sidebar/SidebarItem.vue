@@ -1,12 +1,7 @@
 <template>
   <div v-if="!item.meta || !item.meta.hidden" class="sidebar-item-container">
     <!--一个路由下只有一个子路由的时候 只渲染这个子路由-->
-    <template
-      v-if="
-        theOnlyOneChildRoute &&
-        (!theOnlyOneChildRoute.children || noShowingChildren)
-      "
-    >
+    <template v-if="theOnlyOneChildRoute && isRenderSingleRoute">
       <sidebar-item-link
         v-if="theOnlyOneChildRoute.meta"
         :to="resolvePath(theOnlyOneChildRoute.path)"
@@ -144,11 +139,23 @@ export default defineComponent({
       // 如果不是外链 需要和basePath拼接
       return path.resolve(props.basePath, childPath)
     }
+
+    // 设置alwaysShow: true，这样它就会忽略上面定义的规则，一直显示根路由
+    const alwaysShowRootMenu = computed(
+      () => props.item.meta && props.item.meta.alwaysShow
+    )
+    // 是否只有一条可渲染路由
+    const isRenderSingleRoute = computed(
+      () =>
+        !alwaysShowRootMenu.value &&
+        (!theOnlyOneChildRoute.value?.children || noShowingChildren.value)
+    )
+
     return {
       theOnlyOneChildRoute,
       icon,
       resolvePath,
-      noShowingChildren
+      isRenderSingleRoute
     }
   }
 })
