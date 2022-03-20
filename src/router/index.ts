@@ -17,8 +17,8 @@ export const asyncRoutes: RouteRecordRaw[] = [
           ),
         meta: {
           title: "Documentation",
-          icon: "documentation",
-          hidden: true // 菜单栏不显示
+          icon: "documentation"
+          // hidden: true // 菜单栏不显示
         }
       }
     ]
@@ -35,7 +35,9 @@ export const asyncRoutes: RouteRecordRaw[] = [
           import(/* webpackChunkName: "guide" */ "@/views/guide/index.vue"),
         meta: {
           title: "Guide",
-          icon: "guide"
+          icon: "guide",
+          // 当guide路由激活时，高亮选中的是documentation/index菜单
+          activeMenu: "/documentation/index"
         }
       }
     ]
