@@ -7,7 +7,11 @@ import {
   ElMessageBox,
   ElMenu,
   ElMenuItem,
-  ElSubMenu
+  ElSubMenu,
+  ElRow,
+  ElCol,
+  ElBreadcrumb,
+  ElBreadcrumbItem
 } from "element-plus"
 import "element-plus/dist/index.css"
 // Element Plus 组件内部默认使用英语
@@ -31,7 +35,11 @@ export default (app: App): void => {
     ElMessageBox,
     ElMenu,
     ElMenuItem,
-    ElSubMenu
+    ElSubMenu,
+    ElRow,
+    ElCol,
+    ElBreadcrumb,
+    ElBreadcrumbItem
   ]
   components.forEach((component) => {
     app.use(component)
