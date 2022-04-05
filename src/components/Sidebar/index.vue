@@ -1,7 +1,5 @@
 <template>
   <div>
-    <!--测试展开收起-->
-    <h5 @click="isCollapse = !isCollapse">展收测试</h5>
     <el-menu
       class="sidebar-container-menu"
       mode="vertical"
@@ -30,6 +28,7 @@ import variables from "@/styles/variables.scss"
 import { routes } from "@/router"
 // el-menu-item封装
 import SidebarItem from "./SidebarItem.vue"
+import { useStore } from "@/store"
 
 export default defineComponent({
   name: "Sidebar",
@@ -38,6 +37,7 @@ export default defineComponent({
   },
   setup() {
     const route = useRoute() // 等价于 this.$route
+    const store = useStore()
     // 根据路由路径 对应 当前激活的菜单
     const activeMenu = computed(() => {
       const { path, meta } = route
@@ -49,8 +49,8 @@ export default defineComponent({
     })
     // scss变量
     const scssVariables = computed(() => variables)
-    // 展开收起状态 稍后放store
-    const isCollapse = ref(false)
+    // 展开收起状态 稍后放store；当前是展开就让它收起
+    const isCollapse = computed(() => !store.getters.sidebar.opened)
     // 渲染路由
     const menuRoutes = computed(() => routes)
     return {

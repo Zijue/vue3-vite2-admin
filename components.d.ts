@@ -13,6 +13,8 @@ declare module 'vue' {
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    Hambuger: typeof import('./src/components/Hambuger/index.vue')['default']
+    Navbar: typeof import('./src/components/Navbar/index.vue')['default']
     Sidebar: typeof import('./src/components/Sidebar/index.vue')['default']
     SidebarItem: typeof import('./src/components/Sidebar/SidebarItem.vue')['default']
     SidebarItemLink: typeof import('./src/components/Sidebar/SidebarItemLink.vue')['default']

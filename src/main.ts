@@ -5,7 +5,7 @@ import router from "./router"
 import "normalize.css/normalize.css"
 // 全局css
 import "@/styles/index.scss"
-import { createPinia } from "pinia"
+import store, { key } from "./store"
 // element-plus
 import ElementPlus from "element-plus"
 import "element-plus/dist/index.css"
@@ -16,7 +16,7 @@ import initElementIcons from "@/plugins/element-icon"
 import initSvgIcon from "@/plugins/svgIcon"
 
 const app = createApp(App)
-app.use(createPinia())
+app.use(store, key)
 app.use(router)
 app.use(ElementPlus, { size: "medium", zIndex: 2000 })
 app.use(initElementIcons)

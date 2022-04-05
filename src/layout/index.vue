@@ -5,9 +5,7 @@
     </div>
     <div class="main-container">
       <div class="header">
-        <div class="navbar">
-          <Breadcrumb />
-        </div>
+        <Navbar />
         <div class="tags-view">tagsview</div>
       </div>
       <app-main />
@@ -17,7 +15,7 @@
 <script setup lang="ts">
 import Sidebar from "@/components/Sidebar/index.vue"
 import AppMain from "@/components/AppMain/index.vue"
-import Breadcrumb from "@/components/Breadcrumb/index.vue"
+import Navbar from "@/components/Navbar/index.vue"
 </script>
 <style lang="scss" scoped>
 .app-wrapper {
